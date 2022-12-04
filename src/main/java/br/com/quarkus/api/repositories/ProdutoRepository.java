@@ -15,16 +15,16 @@ public class ProdutoRepository {
 		return produto;
 	}
 	
-	public Optional<Produto> consultar(Long idProduto) {
+	public Optional<Produto> consultarPorId(Long idProduto) {
 		return Produto.findByIdOptional(idProduto);
 	}
 	
 	public void deletar(Long idProduto) {
-		this.consultar(idProduto).ifPresent(Produto::delete);
+		this.consultarPorId(idProduto).ifPresent(Produto::delete);
 	}
 
-	public List<Produto> consultarProdutos(){
-		return Produto.findAll().list();
+	public List<Produto> consultarTodosProdutos() {
+		return Produto.listAll();
 	}
 
 }

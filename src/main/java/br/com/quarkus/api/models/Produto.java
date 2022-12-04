@@ -5,7 +5,7 @@ import javax.persistence.*;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
-@Table(name="produto")
+//@Table(name="produto")
 public class Produto extends PanacheEntity {
 
 

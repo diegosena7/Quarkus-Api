@@ -9,7 +9,6 @@ import javax.transaction.Transactional;
 
 import br.com.quarkus.api.models.Produto;
 import br.com.quarkus.api.repositories.ProdutoRepository;
-import org.locationtech.jts.geom.LineSegment;
 
 @Transactional
 @ApplicationScoped
@@ -29,12 +28,12 @@ public class ProdutoService {
 		return produtoRepository.cadastrar(produtoDB);
 	}
 	
-	public Optional<Produto> consultar(Long idProduto) {
-		return produtoRepository.consultar(idProduto);
+	public Optional<Produto> consultarPorId(Long idProduto) {
+		return produtoRepository.consultarPorId(idProduto);
 	}
 
 	public List<Produto> consultarTodosProdutos(){
-		return produtoRepository.consultarProdutos();
+		return produtoRepository.consultarTodosProdutos();
 	}
 	
 	public void deletar(Long idProduto) {

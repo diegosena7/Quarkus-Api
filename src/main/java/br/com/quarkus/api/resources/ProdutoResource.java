@@ -44,13 +44,15 @@ public class ProdutoResource {
 	}
 
 	@GET
+	@Path("/allProducts")
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Produto> consultarTodosProdutos() {
 		return produtoService.consultarTodosProdutos();
 	}
 	
 	@GET
-	public Response consultar(@QueryParam(value = "idProduto") Long idProduto) {
-		Optional<Produto> optProduto = produtoService.consultar(idProduto);
+	public Response consultarPorId(@QueryParam(value = "idProduto") Long idProduto) {
+		Optional<Produto> optProduto = produtoService.consultarPorId(idProduto);
 		if(optProduto.isEmpty()) {
 			return Response.noContent().build();
 		}
